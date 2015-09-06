@@ -2,8 +2,15 @@
 
 DEBUG=0
 
+function print_usage
+{
+  echo "Usage:"
+  echo "  $0 <interface name> <bridge name> <Options>"
+  echo "  Options: -i/--ip <ip> -g/--gateway <gateway> -n/--netmask <netmask>"
+}
+
 if [ $# -lt 2 ]; then
-  echo "$0 <interface name> <bridge name> <options>"
+  print_usage
   exit 1
 fi
 
@@ -12,31 +19,28 @@ br=$2
 shift; shift
 
 # getopts
-while [[ $# > 1 ]]
-  do
+while [[ $# > 1 ]]; do
   key="$1"
 
   case $key in
-      -i|--ip)
-        ip="$2"
-        shift
-      ;;
-      -g|--gateway)
-        gw="$2"
-        shift
-      ;;
-      -n|--netmask)
-        nm="$2"
-        shift
-      ;;
-      *)
-        # unknown option
-        echo "unknow option $1"
-        echo "usage:"
-        echo "$0 <interface name> <bridge name> <Options>"
-        echo "Options: -i/--ip <ip> -g/--gateway <gateway> -n/--netmask <netmask>"
-        exit 1
-      ;;
+    -i|--ip)
+      ip="$2"
+      shift
+    ;;
+    -g|--gateway)
+      gw="$2"
+      shift
+    ;;
+    -n|--netmask)
+      nm="$2"
+      shift
+    ;;
+    *)
+      # unknown option
+      echo "unknow option $1"
+      print_usage
+      exit 1
+    ;;
   esac
   shift
 done
