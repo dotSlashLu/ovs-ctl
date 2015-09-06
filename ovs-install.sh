@@ -42,6 +42,8 @@ function build
   make install
   make modules_install
   modprobe openvswitch
+  cp rhel/etc_init.d_openvswitch /etc/init.d/openvswitch
+  cp rhel/etc_sysconfig_network-scripts_ifdown-ovs rhel/etc_sysconfig_network-scripts_ifup-ovs /etc/sysconfig/network-scripts/
 }
 
 function install_rpm
