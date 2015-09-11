@@ -1,0 +1,10 @@
+#ovs-ctl
+
+Scripts for install, init, and create bridge on CentOS 6.x
+
+Since building rpm on CentOS 6.x is quite buggy for now(getting better with git
+master), this install script uses generic method for building(make, configure).
+There're limits of using this way, like the openvswitch kernel module gets lost
+after reboot, you should do modprobe your self in init script or how ever, and
+then start the openvswitch service.
+

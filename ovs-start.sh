@@ -1,5 +1,6 @@
 #!/bin/bash
-## start ovs
+# start ovs, normally you can just use `service openvsiwtch start`
+# author: dotslash.lu <dotslash.lu@gmail.com>
 
 prefix=/usr
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# author: dotslash.lu <dotslash.lu@gmail.com>
 
 rpm_baseurl=''
 install_prefix='/usr'

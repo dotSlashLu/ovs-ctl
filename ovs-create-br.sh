@@ -1,4 +1,5 @@
 #!/bin/bash
+# author: dotslash.lu <dotslash.lu@gmail.com>
 
 DEBUG=0
 
